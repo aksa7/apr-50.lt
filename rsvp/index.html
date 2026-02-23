@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RSVP</title>
+
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/rsvp/rsvp.css" />
+
+  <script src="/rsvp/rsvp.js" defer></script>
+</head>
+
+<body class="rsvp-page">
+  <div class="top-bar" aria-hidden="true"></div>
+
+  <header class="page rsvp-shell">
+    <nav class="rsvp-nav">
+      <a class="rsvp-back" href="/">GRĮŽTI</a>
+    </nav>
+
+    <main class="rsvp">
+      <section class="card">
+        <h1 class="card__title">RSVP</h1>
+
+        <form id="rsvpForm" class="form" autocomplete="on">
+          <fieldset class="fieldset">
+            <legend class="legend">Ar dalyvausite?</legend>
+
+            <label class="radio">
+              <input type="radio" name="dalyvaus" value="Taip" required />
+              <span>Taip</span>
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="dalyvaus" value="Ne" required />
+              <span>Ne</span>
+            </label>
+          </fieldset>
+
+          <div id="yesFields" class="yes-fields" hidden>
+            <label class="field">
+              <span>Dalyvaujančių asmenų vardai ir pavardės</span>
+              <input name="vardaiPavardes" type="text" placeholder="Pvz.: Vardas Pavardė, Vardas Pavardė" required />
+            </label>
+
+            <label class="field">
+              <span>Gimimo datos</span>
+              <input name="gimimoDatos" type="text" placeholder="Pvz.: 1990-01-01, 1992-05-10" required />
+            </label>
+
+            <label class="field">
+              <span>El. paštas</span>
+              <input name="email" type="email" placeholder="vardas@email.com" required />
+            </label>
+
+            <label class="field">
+              <span>Telefono numeris</span>
+              <input name="telefonas" type="tel" placeholder="+370..." required />
+            </label>
+
+            <label class="field">
+              <span>Maisto pasirinkimai (mėsa/žuvis/vegetariškas)</span>
+              <input name="maistas" type="text" required />
+            </label>
+
+            <label class="field">
+              <span>Maisto alergijos ir netoleravimai</span>
+              <input name="alergijos" type="text" />
+            </label>
+
+            <label class="field">
+              <span>Planuojama atvykimo data</span>
+              <input name="atvykimas" type="text" placeholder="YYYY-MM-DD" />
+            </label>
+
+            <label class="field">
+              <span>Planuojama išvykimo data</span>
+              <input name="isvykimas" type="text" placeholder="YYYY-MM-DD" />
+            </label>
+
+            <label class="field">
+              <span>Specialūs pageidavimai (apgyvendinimui, atvykimui, maitinimui, gėrimams)</span>
+              <input name="pageidavimai" type="text" />
+            </label>
+
+            <button id="submitBtn" class="btn btn--primary" type="submit">Siųsti</button>
+          </div>
+
+          <p id="msg" class="msg" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+  </header>
+</body>
+</html>

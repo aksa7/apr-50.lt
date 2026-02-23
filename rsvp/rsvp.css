@@ -1,0 +1,182 @@
+/* RSVP compact + BG tik RSVP puslapiui */
+:root{
+  --rsvp-max: 920px;
+}
+
+/* viskas tilps tvarkingai (input 100% ir pan.) */
+.rsvp-page,
+.rsvp-page *{
+  box-sizing: border-box;
+}
+
+.rsvp-page{
+  background-color: var(--paper, #f3f0e3);
+  background-image: url("/gallery/BG.png"); /* tavo bg.png/BG.png (jei kitas pavadinimas – pakeisk) */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* vietoj 100vh -> 100dvh, kad mobile apačia “nepridėtų” extra erdvės [web:270] */
+.rsvp-shell{
+  min-height: calc(100dvh - 10px);
+}
+
+/* mažiau oro viršuje */
+.rsvp-nav{
+  width: min(var(--rsvp-max), calc(100% - 28px));
+  margin: 0 auto;
+  padding: 16px 0 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* didesnis GRĮŽTI */
+.rsvp-back{
+  color: var(--purple, #2f2a88);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 12px;
+
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(47,42,136,0.18);
+  background: rgba(243,240,227,0.75);
+  backdrop-filter: blur(10px);
+}
+
+.rsvp-back:hover{
+  background: rgba(243,240,227,0.92);
+}
+
+.rsvp{
+  width: min(var(--rsvp-max), calc(100% - 28px));
+  margin: 0 auto;
+  padding: 14px 0 30px; /* mažiau aukščio */
+}
+
+.card{
+  border: 1px solid rgba(47,42,136,0.18);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.28);
+  backdrop-filter: blur(12px);
+  padding: 18px; /* mažiau padding */
+}
+
+/* mažesnis title */
+.card__title{
+  margin: 0 0 10px;
+  font-family: var(--serif, Georgia, serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--purple, #2f2a88);
+  font-size: 42px;
+  line-height: 1.05;
+}
+
+.form{
+  display: grid;
+  gap: 12px; /* mažiau tarpo */
+}
+
+/* kompaktiškas fieldset */
+.fieldset{
+  border: 1px solid rgba(47,42,136,0.16);
+  border-radius: 14px;
+  padding: 10px 12px;
+  margin: 0;
+  background: rgba(255,255,255,0.18);
+}
+
+.legend{
+  padding: 0 8px;
+  color: var(--purple, #2f2a88);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-size: 13px;
+}
+
+.radio{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 18px;
+  color: var(--purple, #2f2a88);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.yes-fields{
+  display: grid;
+  gap: 10px; /* mažiau tarpo */
+  padding-top: 2px;
+}
+
+.field span{
+  display: block;
+  margin: 0 0 6px;
+  color: var(--purple, #2f2a88);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* mažesni input’ai */
+.field input{
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(47,42,136,0.18);
+  background: rgba(255,255,255,0.78);
+  font-size: 16px; /* svarbu mobile (iOS zoom) */
+  outline: none;
+}
+
+.field input:focus{
+  border-color: rgba(47,42,136,0.55);
+  box-shadow: 0 0 0 4px rgba(47,42,136,0.10);
+}
+
+.btn{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 900;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.btn--primary{
+  background: var(--purple, #2f2a88);
+  color: #fff;
+}
+
+.btn--primary:disabled{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.msg{
+  min-height: 18px;
+  color: var(--purple, #2f2a88);
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+/* Desktop – dar šiek tiek mažiau “oro” */
+@media (min-width: 900px){
+  .rsvp{ padding: 18px 0 44px; }
+  .card{ padding: 22px; }
+  .card__title{ font-size: 52px; }
+  .btn{ width: max-content; justify-self: start; padding: 12px 18px; }
+}
+
+/* Mobile – kad būtų “solidžiai” */
+@media (max-width: 520px){
+  .card__title{ font-size: 38px; }
+  .rsvp-back{ padding: 12px 14px; }
+}

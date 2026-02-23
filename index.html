@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2026 | 08 | 16-18</title>
+
+  <!-- SVARBU: pas tave failas vadinasi styles.css -->
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/main.js" defer></script>
+</head>
+
+<body>
+  <div class="top-bar" aria-hidden="true"></div>
+
+  <header class="page section section--hero" id="top">
+    <nav class="nav">
+      <a class="nav__brand" href="/" aria-label="Home"></a>
+
+      <!-- Desktop menu (tik desktop) -->
+      <div class="nav__links" aria-label="Meniu (desktop)">
+        <a href="/rsvp/">RSVP</a>
+        <a href="#programa">PROGRAMA</a>
+        <a href="#atvykimas">ATVYKIMAS</a>
+        <a href="#apgyvendinimas">APGYVENDINIMAS</a>
+        <a href="#kita-info">KITA INFO</a>
+      </div>
+
+      <!-- Hamburger (tik mobile) -->
+      <button id="burger"
+              class="nav__burger"
+              type="button"
+              aria-label="Atidaryti meniu"
+              aria-expanded="false"
+              aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile dropdown panel (tik mobile; pagal nutylėjimą paslėpta) -->
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <a href="/rsvp/">RSVP</a>
+      <a href="#programa">PROGRAMA</a>
+      <a href="#atvykimas">ATVYKIMAS</a>
+      <a href="#apgyvendinimas">APGYVENDINIMAS</a>
+      <a href="#kita-info">KITA INFO</a>
+    </div>
+
+    <main class="hero">
+      <section class="hero__content">
+        <h1 class="hero__date">2026&nbsp;&nbsp;|&nbsp;&nbsp;08&nbsp;&nbsp;|&nbsp;&nbsp;16-18</h1>
+        <p class="hero__place">
+          Villa Lena, Toiano,<br />
+          Tuscany, Italy
+        </p>
+
+        <p class="hero__text">
+          Prisimenant dažnai italų naudojamą frazę - <strong>LA DOLCE VITA</strong> - tai „saldus gyvenimas“:
+          gebėjimas mėgautis akimirka, geru maistu, vynu, saule ir buvimu kartu be skubėjimo.
+          Būtent tokia bus ir ši šventė - kviečiame ją pasidžiaugti kartu.
+        </p>
+      </section>
+    </main>
+  </header>
+
+  <!-- PROGRAMA -->
+  <section id="programa" class="section section--programa">
+    
+    <div class="wrap">
+      <h2 class="h2">Programa</h2>
+
+      <div class="programme">
+        <article class="programme-day">
+          <div class="programme-left">
+            <div class="programme-date">08.16</div>
+            <div class="programme-times">
+              <div class="programme-time">11:00</div>
+              <div class="programme-time">19:00</div>
+            </div>
+          </div>
+          <div class="programme-right">
+            <div class="programme-events">
+              <div class="programme-event">Atvykimas į Vila Lena (nuoroda bus prisegta)</div>
+              <div class="programme-event">Vakarienė Villa Lena sode</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="programme-day">
+          <div class="programme-left">
+            <div class="programme-date">08.17</div>
+            <div class="programme-times">
+              <div class="programme-time">9:00 - 11:00</div>
+              <div class="programme-time">12:00 - 16:00</div>
+              <div class="programme-time">19:00</div>
+            </div>
+          </div>
+          <div class="programme-right">
+            <div class="programme-events">
+              <div class="programme-event">Pusryčiai Villa Lena</div>
+              <div class="programme-event">Pramogos viloje arba išvyka į Toskanos apylinkes</div>
+              <div class="programme-event">Šventinė vakarienė Villa Lena, <strong>Andriaus Pranckevičiaus</strong> 50-ojo gimtadienio proga</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="programme-day">
+          <div class="programme-left">
+            <div class="programme-date">08.18</div>
+            <div class="programme-times">
+              <div class="programme-time">9:00 - 11:00</div>
+              <div class="programme-time">11:00</div>
+            </div>
+          </div>
+          <div class="programme-right">
+            <div class="programme-events">
+              <div class="programme-event">Pusryčiai Villa Lena</div>
+              <div class="programme-event">Išsiregistravimas iš kambarių</div>
+              <div class="programme-event">Skrydis namo arba vakarėlio pratęsimas</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="section-sep" aria-hidden="true"></div>
+  </section>
+
+  <!-- ATVYKIMAS -->
+  <section id="atvykimas" class="section section--atvykimas">
+    <div class="wrap">
+      <h2 class="h2">Atvykimas</h2>
+      <p class="lead">Patogiausia Villa Lena pasiekti iš Pizos arba Florencijos oro uostų.</p>
+
+      <div class="arrivals">
+        <article class="arrival-col">
+          <div class="arrival-head">
+            <div class="badge">1</div>
+            <div class="arrival-title">ATVYKIMAS | PIZOS ORO UOSTA:</div>
+          </div>
+
+          <div class="arrival-text">
+            <p>Tiesioginiai skrydžiai iš Kauno į Pizą vykdomi šeštadieniais - antradieniais.</p>
+            <p>Netiesioginis skrydis iš Vilniaus galimas su persėdimu Frankfurte.</p>
+          </div>
+
+          <button class="circle-btn js-open-gallery"
+                  type="button"
+                  data-gallery="atvykimas"
+                  data-index="0"
+                  aria-label="Atidaryti Pizos maršrutą">
+            <img class="circle-img circle-img--hover" src="/gallery/atvykimas/piza_oro_uostas.png" alt="Maršrutas iš Pizos oro uosto" />
+          </button>
+        </article>
+
+        <article class="arrival-col">
+          <div class="arrival-head">
+            <div class="badge">2</div>
+            <div class="arrival-title">ATVYKIMAS | FLORENCIJOS ORO UOSTA:</div>
+          </div>
+
+          <div class="arrival-text">
+            <p>Iš Vilniaus į Florenciją galite skristi su persėdimu Ciuriche arba Frankfurte.</p>
+            <p>Netiesioginis skrydis iš Vilniaus galimas su persėdimu Frankfurte.</p>
+          </div>
+
+          <button class="circle-btn js-open-gallery"
+                  type="button"
+                  data-gallery="atvykimas"
+                  data-index="1"
+                  aria-label="Atidaryti Florencijos maršrutą">
+            <img class="circle-img circle-img--hover" src="/gallery/atvykimas/florencija_oro_uostas.png" alt="Maršrutas iš Florencijos oro uosto" />
+          </button>
+        </article>
+      </div>
+    </div>
+    <div class="section-sep" aria-hidden="true"></div>
+  </section>
+
+  <!-- APGYVENDINIMAS -->
+  <section id="apgyvendinimas" class="section section--apgyvendinimas">
+    <div class="wrap">
+      <h2 class="h2">Apgyvendinimas</h2>
+
+      <div class="stay-photos">
+        <button class="circle-btn js-open-gallery" type="button" data-gallery="stay" data-index="0" aria-label="Atidaryti apgyvendinimo nuotrauką 1">
+          <img class="circle-img circle-img--stay circle-img--hover" src="/gallery/apgyvendinimas/fattoria.webp" alt="Apgyvendinimas - nuotrauka 1" />
+        </button>
+
+        <button class="circle-btn js-open-gallery" type="button" data-gallery="stay" data-index="1" aria-label="Atidaryti apgyvendinimo nuotrauką 2">
+          <img class="circle-img circle-img--stay circle-img--hover" src="/gallery/apgyvendinimas/renacchi.webp" alt="Apgyvendinimas - nuotrauka 2" />
+        </button>
+
+        <button class="circle-btn js-open-gallery" type="button" data-gallery="stay" data-index="2" aria-label="Atidaryti apgyvendinimo nuotrauką 3">
+          <img class="circle-img circle-img--stay circle-img--hover" src="/gallery/apgyvendinimas/san_michele.webp" alt="Apgyvendinimas - nuotrauka 3" />
+        </button>
+      </div>
+
+      <p class="para para--purple">
+        Šventės svečiai bus apgyvendinti Villa Lena – pačioje Toskanos regiono širdyje, apsuptoje vynuogynų,
+        alyvmedžių giraičių ir kalvotų peizažų. Tai autentiška itališka vila, kurioje dera istorinis žavesys,
+        ramybė ir išskirtinė gamtos atmosfera.
+      </p>
+
+      <p class="note">Daugiau informacijos apie apgyvendinimą bus įkelta netrukus.</p>
+    </div>
+    <div class="section-sep" aria-hidden="true"></div>
+  </section>
+
+  <!-- KITA INFO -->
+  <section id="kita-info" class="section section--kitainfo">
+    <div class="wrap">
+      <h2 class="h2">Papildoma informacija</h2>
+
+      <p class="para para--purple">
+        Esant poreikiui, galima užsisakyti apgyvendinimą viloje prieš ir po šventės.
+        Visais klausimais dėl papildomo apgyvendinimo prašome kreiptis tiesiai į Villa Lena el. paštu.
+      </p>
+
+      <h3 class="h3">KONTAKTAI</h3>
+
+      <div class="contacts">
+        <div class="contact">
+          <div class="contact__title">PERVEŽIMAI</div>
+          <div class="contact__line">host@villa-lena.it</div>
+          <div class="contact__line">+39 328 108 5600</div>
+        </div>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <div class="contact">
+          <div class="contact__title">APGYVENDINIMAS</div>
+          <div class="contact__line">margherita@villa-lena.it</div>
+        </div>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <div class="contact">
+          <div class="contact__title">BENDRA INFORMACIJA DĖL ŠVENTĖS<br/>IR LOGISTIKOS</div>
+          <div class="contact__line">aurelija@inspotlight.lt</div>
+          <div class="contact__line">+37067355094</div>
+        </div>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <div class="contact">
+          <div class="contact__title">KITA INFORMACIJA</div>
+          <div class="contact__line">Andrius Pranckevičius</div>
+          <div class="contact__line">+37068771419</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <dialog class="lightbox" id="lightbox">
+    <button class="lightbox__close" type="button" aria-label="Uždaryti">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Ankstesnė">‹</button>
+
+    <figure class="lightbox__figure">
+      <img id="lightboxImg" class="lightbox__img" alt="" />
+    </figure>
+
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Kita">›</button>
+  </dialog>
+</body>
+</html>
