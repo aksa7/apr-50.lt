@@ -18,6 +18,7 @@
 html{ scroll-behavior: smooth; }
 body{
   margin: 0;
+  overflow-x: hidden;
   font-family: var(--sans);
   background: var(--paper); /* BG.png ne ant body */
   color: #1b1b1b;
@@ -35,11 +36,19 @@ body{
 
 .section--hero{
   background-image: var(--bg-hero);
-  min-height: calc(100vh - 10px);
+  display: block; 
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
   background-position: right center;
+  
 }
 .section--programa{ background-image: var(--bg-programa); }
-.section--atvykimas{ background-image: var(--bg-atvykimas); }
+.section--atvykimas{ 
+  background-image: var(--bg-atvykimas);
+  background-size: cover;
+}
 .section--apgyvendinimas{ background-image: var(--bg-apgyvendinimas); }
 .section--kitainfo{ background-image: var(--bg-kitainfo); }
 
@@ -82,8 +91,8 @@ body{
 
 /* NAV */
 .nav{
-  width: min(var(--max), calc(100% - 120px));
-  margin: 0 auto;
+  /* width: min(var(--max), calc(100% - 120px)); */
+  margin: 0 40px;
   padding: 34px 0 0;
   display: flex;
   align-items: center;
@@ -96,7 +105,7 @@ body{
   gap: 46px;
   align-items: center;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.10em;
   text-transform: uppercase;
 }
@@ -155,19 +164,33 @@ body{
 .mobile-menu a:hover{ background: rgba(47,42,136,0.06); }
 
 /* HERO */
-.hero{
-  width: min(var(--max), calc(100% - 120px));
-  margin: 0 auto;
-  padding: 130px 0 80px;
+.hero {
+  /* Šitas konteineris užima likusį ekrano plotą po meniu */
+  min-height: calc(100vh - 100px); 
+  width: 100%;
+  
+  /* Įjungiam Flexbox TIK turiniui */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centruoja vertikaliai (iš viršaus į apačią) */
+  
+  /* SVARBU: "Kur kas kairiau" */
+  /* Mes naudojame padding-right, kad pastumtume visą centrą nuo vilos (dešinės pusės) */
+  padding-right: 25%; 
+  padding-left: 5%;  /* Šiek tiek vietos nuo kairio krašto (citrinų) */
+  box-sizing: border-box;
 }
-.hero__content{ max-width: 640px; }
+.hero__content{ 
+  max-width: 640px;
+  text-align: center;
+  padding: 2rem;
+}
 .hero__date{
-  margin: 0 0 18px;
   font-family: var(--serif);
   font-style: italic;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--purple);
-  font-size: 64px;
+  font-size: 54px;
   line-height: 1.05;
 }
 .hero__place{
@@ -201,20 +224,63 @@ body{
 .circle-img--hover:hover{ transform: scale(1.02); filter: saturate(1.05) contrast(1.02); }
 .circle-img--stay{ width:100%; max-width: 420px; margin:0 auto; }
 
-/* PROGRAMA */
-.programme{ margin-top: 16px; display:grid; gap:56px; max-width: 1040px; }
-.programme-day{ display:grid; grid-template-columns: 140px 1fr; gap:54px; }
-.programme-date{ font-weight:700; color:var(--purple); font-size:28px; }
-.programme-times{ margin-top:18px; display:grid; gap:14px; font-weight:600; color:var(--purple); }
-.programme-right{ position:relative; padding-left:46px; }
-.programme-right::before{
-  content:"";
-  position:absolute;
-  left:12px; top:6px; bottom:6px;
-  width:2px;
-  background: rgba(47,42,136,0.55);
+/* PROGRAMA - PATAISYTA */
+.programme {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Tarpas tarp dienų blokų */
+  max-width: 1000px;
 }
-.programme-events{ display:grid; gap:16px; color:var(--purple); line-height:1.9; }
+
+.programme-date {
+  font-weight: 700;
+  color: var(--purple);
+  font-size: 32px; /* Šiek tiek didesnis, kaip pavyzdyje */
+  margin-bottom: 24px;
+}
+
+/* Kiekviena eilutė yra tinklelis: [Laikas] [Tekstas] */
+.programme-row {
+  display: grid;
+  /* Pirmas stulpelis laikui (fiksuotas), antras tekstui */
+  grid-template-columns: 140px 1fr; 
+  align-items: start; /* Svarbu: lygiuoja į viršų, jei tekstas peršoka eilutę */
+  margin-bottom: 16px; /* Tarpas tarp eilučių */
+}
+
+.p-time {
+  font-weight: 600;
+  color: var(--purple);
+  font-size: 18px;
+  line-height: 1.6; /* Kad gražiai lygiuotųsi su teksto pirma eilute */
+}
+
+.p-desc {
+  color: var(--purple);
+  line-height: 1.6;
+  font-size: 18px;
+  
+  /* Čia sukuriame tą vertikalią liniją */
+  border-left: 2px solid var(--purple);
+  padding-left: 30px; /* Atitraukimas nuo linijos iki teksto */
+}
+
+/* MOBILE PRITAIKYMAS */
+@media (max-width: 600px) {
+  .programme-row {
+    grid-template-columns: 100px 1fr; /* Mobiliame sumažiname laiko stulpelį */
+  }
+  .p-time, .p-desc {
+    font-size: 16px; /* Šiek tiek mažesnis tekstas telefonams */
+  }
+  .p-desc {
+    padding-left: 15px; /* Mažesnis tarpas nuo linijos */
+  }
+  .programme-date {
+    font-size: 26px;
+  }
+}
 
 /* ATVYKIMAS */
 .arrivals{ display:grid; grid-template-columns: 1fr 1fr; gap:78px; }
@@ -305,8 +371,6 @@ body{
   .contacts{ grid-template-columns: 1fr; }
   .divider{ display:none; }
   .stay-photos{ grid-template-columns: 1fr; gap: 26px; }
-  .programme-day{ grid-template-columns: 1fr; gap: 18px; }
-  .programme-right{ padding-left: 26px; }
 }
 
 @media (max-width: 900px){
@@ -314,8 +378,19 @@ body{
   .nav__links{ display:none; }     /* desktop menu dingsta */
   .nav__burger{ display:inline-block; } /* hamburger atsiranda */
 
-  .hero{ padding-top: 88px; }
-  .hero__date{ font-size: 44px; }
+  .hero{
+    min-height: calc(100dvh - 90px);    /* paliekam vietos nav’ui */
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 88px 14px 36px;            /* tvarkingas atitraukimas */
+    padding-left: max(14px, env(safe-area-inset-left));
+    padding-right: max(14px, env(safe-area-inset-right));
+
+    /* SVARBU: nuimam tavo desktop “pastūmimą” */
+    padding-right: 0 !important;
+  }
+  .hero__date{ font-size: 34px; }
   .hero__place{ font-size: 24px; }
 
   .arrivals{ grid-template-columns: 1fr; gap: 54px; }
@@ -326,10 +401,7 @@ body{
 
 @media (max-width: 520px){
   .wrap{ padding: 74px 0; }
-  .hero__date{ font-size: 38px; }
-  .section-sep{ height: 34px; }
-  .programme-right::before{ left: 8px; }
-  .programme-right{ padding-left: 20px; }
+  .hero__date{ font-size: 34px; }
   .section--hero {
     min-height: 0 !important;
     background-position: left !important;
