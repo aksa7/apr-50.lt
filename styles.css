@@ -20,7 +20,7 @@ body{
   margin: 0;
   overflow-x: hidden;
   font-family: var(--sans);
-  background: var(--paper); /* BG.png ne ant body */
+  background: var(--paper);
   color: #1b1b1b;
 }
 
@@ -31,21 +31,20 @@ body{
   background-color: var(--paper);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; /* mobile cover */
+  background-size: cover;
 }
 
 .section--hero{
   background-image: var(--bg-hero);
-  display: block; 
+  display: block;
   padding: 0;
   position: relative;
   min-height: 100vh;
   background-size: cover;
   background-position: right center;
-  
 }
 .section--programa{ background-image: var(--bg-programa); }
-.section--atvykimas{ 
+.section--atvykimas{
   background-image: var(--bg-atvykimas);
   background-size: cover;
 }
@@ -80,9 +79,10 @@ body{
   font-size: 22px;
 }
 .lead{ margin: 0 0 52px; line-height: 1.8; color: #2a2a2a; max-width: 720px; }
-.para{ margin: 0; 
-  line-height: 1.9; 
-  color: #2a2a2a; 
+.para{
+  margin: 0;
+  line-height: 1.9;
+  color: #2a2a2a;
   max-width: 980px;
   padding-top: 3rem;
 }
@@ -91,7 +91,6 @@ body{
 
 /* NAV */
 .nav{
-  /* width: min(var(--max), calc(100% - 120px)); */
   margin: 0 40px;
   padding: 34px 0 0;
   display: flex;
@@ -113,7 +112,7 @@ body{
 .nav__links a:hover{ text-decoration: underline; text-underline-offset: 6px; }
 
 .nav__burger{
-  display: none; /* desktop paslėpta */
+  display: none;
   width: 46px;
   border-radius: 999px;
   border: 1px solid rgba(47,42,136,0.25);
@@ -124,7 +123,7 @@ body{
 }
 .nav__burger span{ display:block; height:2px; background: var(--purple); margin:6px 0; }
 
-/* Mobile menu panel (tik mobile; JS įjungia class .is-open) */
+/* Mobile menu panel (JS įjungia class .is-open) */
 .mobile-menu{
   position: fixed;
   top: 76px;
@@ -164,27 +163,32 @@ body{
 .mobile-menu a:hover{ background: rgba(47,42,136,0.06); }
 
 /* HERO */
-.hero {
-  /* Šitas konteineris užima likusį ekrano plotą po meniu */
-  min-height: calc(100vh - 100px); 
+.hero{
+  min-height: calc(100vh - 100px);
   width: 100%;
-  
-  /* Įjungiam Flexbox TIK turiniui */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centruoja vertikaliai (iš viršaus į apačią) */
-  
-  /* SVARBU: "Kur kas kairiau" */
-  /* Mes naudojame padding-right, kad pastumtume visą centrą nuo vilos (dešinės pusės) */
-  padding-right: 25%; 
-  padding-left: 5%;  /* Šiek tiek vietos nuo kairio krašto (citrinų) */
+  justify-content: center;
+  padding-right: 25%;
+  padding-left: 5%;
   box-sizing: border-box;
 }
-.hero__content{ 
+.hero__content{
   max-width: 640px;
   text-align: center;
   padding: 2rem;
 }
+
+/* 1) NAUJAS HERO TEKSTAS */
+.hero__kicker{
+  margin: 0 0 14px;
+  color: var(--purple);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
 .hero__date{
   font-family: var(--serif);
   font-style: italic;
@@ -192,9 +196,10 @@ body{
   color: var(--purple);
   font-size: 54px;
   line-height: 1.05;
+  margin: 0 0 18px;
 }
 .hero__place{
-  margin: 0 0 34px;
+  margin: 0 0 20px;
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
@@ -202,14 +207,23 @@ body{
   font-size: 34px;
   line-height: 1.25;
 }
-.hero__text{ 
+.hero__text{
   margin: 0;
-  max-width: 560px; 
+  max-width: 560px;
   font-size: 20px;
-  font-weight: 500; 
-  line-height: 1.85; 
-  color:var(--purple); 
+  font-weight: 500;
+  line-height: 1.85;
+  color: var(--purple);
 }
+
+/* 2) / 3) Bendras inline link stilius (Villa Lena + el. paštas) */
+.inline-link{
+  color: var(--purple);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.inline-link:hover{ opacity: 0.85; }
 
 /* circles + hover */
 .circle-btn{ padding:0; border:0; background:transparent; cursor:pointer; }
@@ -224,62 +238,50 @@ body{
 .circle-img--hover:hover{ transform: scale(1.02); filter: saturate(1.05) contrast(1.02); }
 .circle-img--stay{ width:100%; max-width: 420px; margin:0 auto; }
 
-/* PROGRAMA - PATAISYTA */
-.programme {
+/* PROGRAMA */
+.programme{
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 60px; /* Tarpas tarp dienų blokų */
+  gap: 60px;
   max-width: 1000px;
 }
 
-.programme-date {
+.programme-date{
   font-weight: 700;
   color: var(--purple);
-  font-size: 32px; /* Šiek tiek didesnis, kaip pavyzdyje */
+  font-size: 32px;
   margin-bottom: 24px;
 }
 
-/* Kiekviena eilutė yra tinklelis: [Laikas] [Tekstas] */
-.programme-row {
+.programme-row{
   display: grid;
-  /* Pirmas stulpelis laikui (fiksuotas), antras tekstui */
-  grid-template-columns: 140px 1fr; 
-  align-items: start; /* Svarbu: lygiuoja į viršų, jei tekstas peršoka eilutę */
-  margin-bottom: 16px; /* Tarpas tarp eilučių */
+  grid-template-columns: 140px 1fr;
+  align-items: start;
+  margin-bottom: 16px;
 }
 
-.p-time {
+.p-time{
   font-weight: 600;
   color: var(--purple);
   font-size: 18px;
-  line-height: 1.6; /* Kad gražiai lygiuotųsi su teksto pirma eilute */
+  line-height: 1.6;
 }
 
-.p-desc {
+.p-desc{
   color: var(--purple);
   line-height: 1.6;
   font-size: 18px;
-  
-  /* Čia sukuriame tą vertikalią liniją */
   border-left: 2px solid var(--purple);
-  padding-left: 30px; /* Atitraukimas nuo linijos iki teksto */
+  padding-left: 30px;
 }
 
-/* MOBILE PRITAIKYMAS */
-@media (max-width: 600px) {
-  .programme-row {
-    grid-template-columns: 100px 1fr; /* Mobiliame sumažiname laiko stulpelį */
-  }
-  .p-time, .p-desc {
-    font-size: 16px; /* Šiek tiek mažesnis tekstas telefonams */
-  }
-  .p-desc {
-    padding-left: 15px; /* Mažesnis tarpas nuo linijos */
-  }
-  .programme-date {
-    font-size: 26px;
-  }
+/* MOBILE PRITAIKYMAS PROGRAMAI */
+@media (max-width: 600px){
+  .programme-row{ grid-template-columns: 100px 1fr; }
+  .p-time, .p-desc{ font-size: 16px; }
+  .p-desc{ padding-left: 15px; }
+  .programme-date{ font-size: 26px; }
 }
 
 /* ATVYKIMAS */
@@ -375,21 +377,26 @@ body{
 
 @media (max-width: 900px){
   .nav{ justify-content: space-between; }
-  .nav__links{ display:none; }     /* desktop menu dingsta */
-  .nav__burger{ display:inline-block; } /* hamburger atsiranda */
+  .nav__links{ display:none; }
+  .nav__burger{ display:inline-block; }
 
+  /* Mobile hero – paliekam tavo logiką, tik pritaikom kicker */
   .hero{
-    min-height: calc(100dvh - 90px);    /* paliekam vietos nav’ui */
+    min-height: calc(100dvh - 90px);
     width: 100%;
     display: grid;
     place-items: center;
-    padding: 88px 14px 36px;            /* tvarkingas atitraukimas */
+    padding: 120px 14px 36px;
     padding-left: max(14px, env(safe-area-inset-left));
     padding-right: max(14px, env(safe-area-inset-right));
-
-    /* SVARBU: nuimam tavo desktop “pastūmimą” */
-    padding-right: 0 !important;
+    padding-right: 0 !important; /* nuimam desktop pastūmimą */
   }
+
+  .hero__kicker{
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
   .hero__date{ font-size: 34px; }
   .hero__place{ font-size: 24px; }
 
@@ -402,7 +409,7 @@ body{
 @media (max-width: 520px){
   .wrap{ padding: 74px 0; }
   .hero__date{ font-size: 34px; }
-  .section--hero {
+  .section--hero{
     min-height: 0 !important;
     background-position: left !important;
   }

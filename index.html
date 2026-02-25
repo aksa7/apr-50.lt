@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>2026 | 08 | 16-18</title>
 
-  <!-- SVARBU: pas tave failas vadinasi styles.css -->
   <link rel="stylesheet" href="/styles.css" />
   <script src="/main.js" defer></script>
 </head>
@@ -48,7 +47,11 @@
 
     <main class="hero">
       <section class="hero__content">
+        <!-- 1) NAUJAS TEKSTAS VIRŠ DATOS -->
+        <p class="hero__kicker">Andriaus Pranckevičiaus 50-ies metų jubiliejus</p>
+
         <h1 class="hero__date">2026&nbsp;&nbsp;|&nbsp;&nbsp;08&nbsp;&nbsp;|&nbsp;&nbsp;16-18</h1>
+
         <p class="hero__place">
           Villa Lena, Toiano,<br />
           Tuscany, Italy
@@ -64,23 +67,30 @@
   </header>
 
   <!-- PROGRAMA -->
-<section id="programa" class="section section--programa">
+  <section id="programa" class="section section--programa">
     <div class="wrap">
       <h2 class="h2">Programa</h2>
 
       <div class="programme">
-        
         <article class="programme-day">
           <div class="programme-date">08.16</div>
-          
+
+          <!-- 2) LAIKAS + NUORODA Į VILLA LENA -->
           <div class="programme-row">
-            <div class="p-time">11:00</div>
-            <div class="p-desc">Atvykimas į Vila Lena (nuoroda bus prisegta)</div>
+            <div class="p-time">Nuo 14:00</div>
+            <div class="p-desc">
+              Atvykimas į
+              <a class="inline-link"
+                 href="https://maps.app.goo.gl/JK6Zk8umGy8dVtBT6"
+                 target="_blank"
+                 rel="noopener noreferrer">Villa Lena</a>
+            </div>
           </div>
-          
+
+          <!-- 2) PASITIKIMO VAKARIENĖ -->
           <div class="programme-row">
             <div class="p-time">19:00</div>
-            <div class="p-desc">Vakarienė Villa Lena sode</div>
+            <div class="p-desc">Pasitikimo vakarienė Villa Lena sode</div>
           </div>
         </article>
 
@@ -99,7 +109,9 @@
 
           <div class="programme-row">
             <div class="p-time">19:00</div>
-            <div class="p-desc">Šventinė vakarienė Villa Lena, <strong>Andriaus Pranckevičiaus</strong> 50-ojo gimtadienio proga</div>
+            <div class="p-desc">
+              Šventinė vakarienė Villa Lena, <strong>Andriaus Pranckevičiaus</strong> 50-ojo gimtadienio proga
+            </div>
           </div>
         </article>
 
@@ -111,16 +123,17 @@
             <div class="p-desc">Pusryčiai Villa Lena</div>
           </div>
 
+          <!-- 2) IŠSIREGISTRAVIMAS "IKI 11:00" -->
           <div class="programme-row">
-            <div class="p-time">11:00</div>
+            <div class="p-time">Iki 11:00</div>
             <div class="p-desc">Išsiregistravimas iš kambarių</div>
           </div>
 
           <div class="programme-row">
-            <div class="p-time"></div> <div class="p-desc">Skrydis namo arba vakarėlio pratęsimas</div>
+            <div class="p-time"></div>
+            <div class="p-desc">Skrydis namo arba vakarėlio pratęsimas</div>
           </div>
         </article>
-
       </div>
     </div>
   </section>
@@ -212,6 +225,10 @@
       <p class="para para--purple">
         Esant poreikiui, galima užsisakyti apgyvendinimą viloje prieš ir po šventės.
         Visais klausimais dėl papildomo apgyvendinimo prašome kreiptis tiesiai į Villa Lena el. paštu.
+        <br /><br />
+        <!-- 3) PRIDĖTAS VILOS EL. PAŠTAS -->
+        Vilos el. paštas:
+        <a class="inline-link" href="mailto:margherita@villa-lena.it">margherita@villa-lena.it</a>
       </p>
 
       <h3 class="h3">KONTAKTAI</h3>
