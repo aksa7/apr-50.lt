@@ -4,12 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ačiū!</title>
+  <meta name="description" content="Ačiū už jūsų atsakymą." />
   <link rel="stylesheet" href="/styles.css" />
 </head>
-<body>
+<body class="thankyou-page">
   <div class="top-bar" aria-hidden="true"></div>
 
-  <header class="page">
+  <header class="page thankyou-shell">
     <nav class="nav">
       <a class="nav__brand" href="/" aria-label="Home"></a>
       <div class="nav__links">
@@ -17,15 +18,15 @@
       </div>
     </nav>
 
-    <main class="rsvp">
-      <section class="card">
-        <h1 class="card__title">Ačiū!</h1>
-        <p class="msg" style="line-height:1.9">
-          Labai ačiū už jūsų atsakymą.<br />
-          Iki pasimatymo rugpjūtį saulėtoje Italijoje!
-        </p>
-        <div style="margin-top:14px">
-          <a class="btn btn--primary" href="/">Grįžti į pagrindinį</a>
+    <main class="thankyou">
+      <section class="thankyou__card">
+        <h1 class="thankyou__title">Ačiū!</h1>
+
+        <p class="thankyou__text">Labai ačiū už jūsų atsakymą.</p>
+        <p class="thankyou__text">Iki pasimatymo rugpjūtį saulėtoje Italijoje!</p>
+
+        <div class="thankyou__actions">
+          <a class="btn btn--primary thankyou__btn" href="/">Grįžti į pagrindinį</a>
         </div>
       </section>
     </main>
