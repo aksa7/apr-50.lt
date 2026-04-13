@@ -11,7 +11,7 @@
 
 .rsvp-page{
   background-color: var(--paper, #f3f0e3);
-  background-image: url("/gallery/BG.png"); /* tavo bg.png/BG.png (jei kitas pavadinimas – pakeisk) */
+  background-image: url("/gallery/BG.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

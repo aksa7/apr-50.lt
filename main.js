@@ -80,8 +80,8 @@ const galleries = {
     "/gallery/apgyvendinimas/san_michele.webp",
   ],
   atvykimas: [
-    "/gallery/atvykimas/piza_oro_uostas.png",
-    "/gallery/atvykimas/florencija_oro_uostas.png",
+    "/gallery/atvykimas/piza_oro_uostas.webp",
+    "/gallery/atvykimas/florencija_oro_uostas.webp",
   ],
 };
 

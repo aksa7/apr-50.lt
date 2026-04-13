@@ -7,11 +7,11 @@
 
   --max: 1200px;
 
-  --bg-hero: url("/gallery/BG.png");
-  --bg-programa: url("/gallery/programme_bg.png");
-  --bg-atvykimas: url("/gallery/atvykimas_bg.png");
-  --bg-apgyvendinimas: url("/gallery/apgyvendinimas_bg.png");
-  --bg-kitainfo: url("/gallery/kitainfo_bg.png");
+  --bg-hero: url("/gallery/BG.webp");
+  --bg-programa: url("/gallery/programme_bg.webp");
+  --bg-atvykimas: url("/gallery/atvykimas_bg.webp");
+  --bg-apgyvendinimas: url("/gallery/apgyvendinimas_bg.webp");
+  --bg-kitainfo: url("/gallery/kitainfo_bg.webp");
 }
 
 *{ box-sizing: border-box; }
