@@ -7,6 +7,7 @@ const msg = document.getElementById("msg");
 const submitBtn = document.getElementById("submitBtn");
 
 let busy = false;
+let redirectTimer = null; // leidžia atšaukti "Ne" redirect'ą jei persigalvoja
 
 function setMsg(t) {
   msg.textContent = t || "";
@@ -92,6 +93,12 @@ form.addEventListener("change", async (e) => {
   setMsg("");
 
   if (val === "Taip") {
+    // Atšaukiam "Ne" redirect'ą jei dar neįvyko ir resetinam busy,
+    // kad žmogus galėtų normaliai pateikti "Taip" formą
+    clearTimeout(redirectTimer);
+    redirectTimer = null;
+    busy = false;
+
     setYesFieldsEnabled(true);
     return;
   }
@@ -105,7 +112,7 @@ form.addEventListener("change", async (e) => {
   try {
     await sendToSheet(payloadFromForm());
     setMsg("Ačiū už jūsų atsakymą.");
-    setTimeout(goThankYou, 200);
+    redirectTimer = setTimeout(goThankYou, 800);
   } catch (err) {
     busy = false;
     setMsg(String(err));
